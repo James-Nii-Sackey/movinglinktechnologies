@@ -1,0 +1,55 @@
+import {
+  BadgeCheck,
+  Cable,
+  Cctv,
+  CircuitBoard,
+  ClipboardCheck,
+  FileText,
+  Fingerprint,
+  Flame,
+  Globe,
+  HardHat,
+  Headset,
+  Layers,
+  LifeBuoy,
+  MessageSquare,
+  Network,
+  PackageCheck,
+  PhoneCall,
+  Scale,
+  Settings2,
+  Timer,
+  Wrench,
+  Zap,
+  type LucideIcon,
+} from "lucide-react";
+
+const MAP: Record<string, LucideIcon> = {
+  BadgeCheck,
+  Cable,
+  Cctv,
+  CircuitBoard,
+  ClipboardCheck,
+  FileText,
+  Fingerprint,
+  Flame,
+  Globe,
+  HardHat,
+  Headset,
+  Layers,
+  LifeBuoy,
+  MessageSquare,
+  Network,
+  PackageCheck,
+  PhoneCall,
+  Scale,
+  Settings2,
+  Timer,
+  Wrench,
+  Zap,
+};
+
+export function Icon({ name, className }: { name: string; className?: string }) {
+  const Cmp = MAP[name] ?? Network;
+  return <Cmp className={className} aria-hidden="true" />;
+}
