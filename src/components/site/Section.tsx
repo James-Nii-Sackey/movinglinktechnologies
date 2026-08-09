@@ -56,7 +56,7 @@ export function Reveal({
     if (!el) return;
     const io = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry && entry.isIntersecting) {
           setShown(true);
           io.disconnect();
         }
@@ -99,7 +99,7 @@ export function Counter({
     if (!el) return;
     const io = new IntersectionObserver(
       ([entry]) => {
-        if (!entry.isIntersecting) return;
+        if (!entry || !entry.isIntersecting) return;
         io.disconnect();
         const duration = 1400;
         const start = performance.now();
