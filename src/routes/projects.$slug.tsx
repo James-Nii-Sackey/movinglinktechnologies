@@ -2,7 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, Check, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { PROJECTS } from "@/lib/site-data";
+import { PROJECTS, type Project } from "@/lib/site-data";
 import { PROJECT_IMAGES, CtaBand } from "@/components/site/sections";
 
 export const Route = createFileRoute("/projects/$slug")({
@@ -31,7 +31,7 @@ export const Route = createFileRoute("/projects/$slug")({
 });
 
 function ProjectDetail() {
-  const { project } = Route.useLoaderData();
+  const { project } = Route.useLoaderData() as { project: Project };
 
   return (
     <>
