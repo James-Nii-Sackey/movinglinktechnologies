@@ -251,8 +251,8 @@ function Field({
   label: string;
   name: string;
   type?: string;
-  error?: string;
-  required?: boolean;
+  error?: string | undefined;
+  required?: boolean | undefined;
 }) {
   return (
     <div>
